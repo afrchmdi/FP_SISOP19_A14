@@ -19,12 +19,6 @@ Source Code :
 #include <pthread.h>
 #include <sys/wait.h>
 
-int read_line(char str[], FILE *fi);
-void *c_ron(void *ye);
-void do_this(char ln[], struct dis *strc);
-
-char *from = "/home/Penunggu/fpsisop/crontab.data";
-
 struct dis
 {
     int c_time[5];
@@ -35,6 +29,13 @@ struct dis
     char a_time[100];
     char wat_to_do[100];
 };
+
+char *from = "/home/Penunggu/fpsisop/crontab.data";
+
+int read_line(char str[], FILE *fi);
+void *c_ron(void *ye);
+void do_this(char ln[], struct dis *strc);
+
 
 int main()
 {
@@ -101,8 +102,8 @@ int main()
 
             hitung = 0;
 
-            printf("akses = %s\n", lt);
-            printf("modif = %s\n", mt);
+            printf("akses = %ld\n", lt);
+            printf("modif = %ld\n", mt);
 
             while (read_line(ln, ct) != -1)
             {
@@ -278,5 +279,4 @@ void *c_ron(void *ye)
         }
     }
 }
-
 ```
